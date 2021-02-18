@@ -99,10 +99,7 @@ base.resizable(width=FALSE, height=FALSE)
 icon_photo = PhotoImage(file = "1000px-Universitaet-st-gallen.svg1.png")
 base.iconphoto(False, icon_photo)
 
-#Create a background using an image
-send_button = PhotoImage(file = "send_image.png")
-img_bg = Label(image=send_button)
-img_bg.pack(pady=30)
+
 
 #Create Chat window
 ChatLog = Text(base, bd=0, bg="white", height="8", width="50", font="Arial",)
