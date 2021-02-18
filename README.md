@@ -1,5 +1,4 @@
 # StudentBot
-StudentBot for the University
 The basic concept of our project is to create a user-friendly tool that allows students to ask subject-related questions to the program through a chat-like user interface and get accurate and immediate answers from it. This chatbot reads training data into a consolidated database file. This pool of information is then used to answer students questions, using machine learning techniques. 
 
 Our retrieval-based chatbot is based on a sequential keras model. Although this is one of the simpler models, it still fits the requirements in terms of prediction accuracy, and is at the same time easier to implement as well as widely used. The model consists of three layers, with 128 neurons in the first, and 65 neurons in the second. The last layer comprises as many neurons as questions in the training data set.
