@@ -1,9 +1,9 @@
 # StudentBot
 StudentBot for the University
+The basic concept of our project is to create a user-friendly tool that allows students to ask subject-related questions to the program through a chat-like user interface and get accurate and immediate answers from it. This chatbot reads training data into a consolidated database file. This pool of information is then used to answer students questions, using machine learning techniques. 
 
+Our retrieval-based chatbot is based on a sequential keras model. Although this is one of the simpler models, it still fits the requirements in terms of prediction accuracy, and is at the same time easier to implement as well as widely used. The model consists of three layers, with 128 neurons in the first, and 65 neurons in the second. The last layer comprises as many neurons as questions in the training data set.
+Regarding training, the program gets its input data via a JSON file that contains topics (“tag”) with corresponding potential questions labelled  as “patterns”, and answers labelled as “responses”, which is consequently used to train the StudentBot by using supervised machine learning. The prototype was trained only with information for one subject (“Microeconomics I”) to make it more simple. Nevertheless, new content for the same or new courses can be easily added. The program reads, tokenizes and lemmatizes the training data using tools from the nltk-toolkit (WordNet corpus). This means it breaks down the input into single words and inferes the root word of each input word. Due to its increased efficiency, a stochastic gradient descent was used to finally train the model. The trained model is subsequently saved as numpy arrays and stored in a HDF5 dataset.
 
-
-
-
-
-Send_image.png is taken from https://thenounproject.com/term/send-button/1015742/
+Once trained, the user can interact with the StudentBot via a graphical user interface (GUI). It was created using the tkinter python library, which provides an easy to use toolkit for interface creation. Based on the model created during the training phase, the program predicts which of the predefined answers has the highest probability to be the accurate answer and retrieves it. To filter for wrong outputs, the error threshold was set to 0.25, which means that the prediction probability should be higher than this.
+The chatbots compatibility is limited by the modules and toolkits used. Since especially nltk only runs on Python versions 3.5 to 3.8, the latest version cannot be used.
